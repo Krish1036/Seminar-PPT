@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <conio.h>
+#define SIZE 5
+void main(){
+int stack[SIZE];
+int top=-1;
+int n,i,con;
+int value;
+
+clrscr();
+printf("Enter 1 for push & 2 for pop: ");
+scanf("%d",&n);
+
+switch(n){
+case 1: if(top>SIZE){
+	printf("Stack overflow");
+	}
+	else{
+	printf("Enter value to be pushed: ");
+	scanf("%d",&value);
+	stack[++top]=value;
+	printf("Value of Stack[%d]:%d",top,value);
+	}
+break;
+case 2: if(top ==-1){
+	printf("Stack underflow");
+	}
+	else{
+	int value = stack[top--];
+	printf("%d popped from the stack.\n",value);
+	}
+
+
+break;
+default: printf("Invalid");
+}
+
+for(i=0; i>SIZE;i++){
+printf("stack[%d]= %d ",i,stack[i]);
+}
+getch();
+}
